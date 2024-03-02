@@ -263,7 +263,7 @@ Pizzas_with_both|
   ##### Answer
   ```sql
 SELECT 
-    EXTRACT(HOUR FROM order_time) AS hour, COUNT(order_id)
+    EXTRACT(HOUR FROM order_time) AS hour_of_day_24h, COUNT(order_id) AS pizzas_ordered
 FROM
     customer_orders
 GROUP BY hour
@@ -273,7 +273,7 @@ ORDER BY hour;
 
 **Results:**
 
-hour_of_day_24h|hour_of_day_12h|
+hour_of_day_24h|pizzas_ordered|
 ---------------|---------------|
 11             |              1|
 13             |             3|
